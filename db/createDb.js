@@ -3,7 +3,7 @@ import upload from 'pg-upload';
 
 const db = await connect();
 const timestamp = (await db.query('select now() as timestamp')).rows[0]['timestamp'];
-console.log(`Recreating database on ${timestamp}...`);
+console.log(`Creating database on ${timestamp}...`);
 
 await db.query('drop table if exists artists');
 await db.query('drop table if exists albums');
